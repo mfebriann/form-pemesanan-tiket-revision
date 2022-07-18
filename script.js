@@ -97,12 +97,12 @@ function printInputValueUser(name, city, status, totalPeople, paymentMethod, dis
 	const sumTotalPayment =
 		removePercentOfDiscount === '0'
 			? outputSubtotal.textContent
-			: parseInt((outputSubtotal.textContent.replace('Rp ', '').replaceAll('.', '') / 100) * (100 - removePercentOfDiscount))
+			: `Rp ${parseInt((outputSubtotal.textContent.replace('Rp ', '').replaceAll('.', '') / 100) * (100 - removePercentOfDiscount))
 					.toLocaleString()
-					.replaceAll(',', '.');
+					.replaceAll(',', '.')}`;
 
 	// Menampilkan jumlah pembayaran
-	outputTotalPayment.textContent = `Rp ${sumTotalPayment}`;
+	outputTotalPayment.textContent = sumTotalPayment;
 
 	// Menampilkan metode pembayaran yang dipilih
 	outputPaymentMethod.textContent = paymentMethod;
