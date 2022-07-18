@@ -1,0 +1,499 @@
+* {
+	box-sizing: border-box;
+}
+
+/* Men-disabled spinners pada input number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+body,
+input,
+button {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+}
+
+h2,
+p {
+	margin: 0;
+}
+
+main {
+	transition: background-color 500ms ease-in-out;
+	background-color: #566f83;
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+}
+
+main.active {
+	background-color: #7bb077;
+}
+
+.container {
+	width: 1024px;
+	margin: 0 auto;
+	overflow: hidden;
+	box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+	position: relative;
+	height: 588px;
+	background-color: #fff;
+}
+
+.item-content {
+	position: absolute;
+	display: flex;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.item-content--form {
+	z-index: 10;
+}
+
+main.active .item-content--output-payment {
+	z-index: 20;
+}
+
+.img-container {
+	object-fit: cover;
+	width: 50%;
+	right: 0;
+}
+
+.content {
+	background-color: white;
+	padding: 16px 20px;
+	width: 50%;
+	left: 0;
+}
+
+.img-container,
+.content {
+	transition: 500ms ease-in-out;
+	position: absolute;
+	top: 0;
+	height: 100%;
+}
+
+.title-form {
+	color: #11161a;
+	margin-bottom: 16px;
+}
+
+.wrap-input:not(:first-child) {
+	margin-top: 1rem;
+}
+
+label {
+	display: block;
+	margin-bottom: 6px;
+	font-size: 0.875rem;
+	color: #11161a;
+}
+
+.input-form {
+	width: 100%;
+	border-radius: 4px;
+	outline: none;
+	padding: 6px;
+	background-color: #e3e3e3;
+	border: none;
+}
+
+.input-form:focus {
+	box-shadow: 0 0 0 2px #566f83;
+}
+
+.input-form--disabled {
+	cursor: not-allowed;
+	background-color: #ccc;
+}
+
+.wrap-btn {
+	display: flex;
+	justify-content: center;
+	gap: 14px;
+	margin-top: 28px;
+}
+
+.btn {
+	font-weight: 500;
+	text-transform: uppercase;
+	transition: 150ms ease-in;
+	background-color: transparent;
+	border: none;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.btn--send {
+	background-color: #0d79d2;
+	padding: 10px 24px;
+	border-radius: 4px;
+	color: #fff;
+}
+
+.btn--send:hover {
+	background-color: #0f8ef5;
+}
+
+.btn--reset {
+	color: rgb(165, 0, 0);
+}
+
+.btn--reset:hover {
+	color: red;
+}
+
+.item-content--output-payment .content {
+	top: 100%;
+	right: 0;
+	left: auto;
+}
+
+.item-content--output-payment .img-container {
+	top: -100%;
+	left: 0;
+}
+
+main.active .item-content--form .content {
+	top: 100%;
+}
+
+main.active .item-content--form .img-container {
+	top: -100%;
+}
+
+main.active .item-content--output-payment .img-container,
+main.active .item-content--output-payment .content {
+	top: 0;
+}
+
+main.active body {
+	background-color: #567851;
+}
+
+/* Bagian konfirmasi detail */
+.confirmation-detail > *:not(:first-child) {
+	margin-top: 8px;
+}
+
+.container-description-output {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	color: #11161a;
+}
+
+.description-output {
+	width: 50%;
+}
+
+.value-output {
+	display: block;
+	width: 50%;
+	font-weight: 600;
+}
+
+.wrap-btn--confirmation-detail {
+	position: absolute;
+	bottom: 16px;
+	width: 100%;
+}
+
+.btn--edit {
+	color: #0d79d2;
+	text-decoration: underline;
+}
+
+.btn--edit:hover {
+	color: #0f8ef5;
+}
+
+.btn--pay {
+	background-color: rgb(17, 147, 48);
+	padding: 10px 24px;
+	border-radius: 4px;
+	color: #fff;
+}
+
+.btn--pay:hover {
+	background-color: rgb(16, 188, 56);
+}
+
+.city {
+	text-transform: capitalize;
+}
+
+/* Popup confirmation */
+.popup-confirmation {
+	position: absolute;
+	inset: 0;
+	z-index: 40;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+	place-items: center;
+}
+
+.popup-confirmation.show,
+.popup-check-detail-data.show {
+	display: grid;
+}
+
+.subpopup-confirmation {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 6px;
+	color: #11161a;
+}
+
+.description-popup-confirmation {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.btn--no {
+	text-decoration: underline;
+}
+
+.btn--no:hover {
+	opacity: 0.8;
+}
+
+.btn--yes {
+	background-color: rgb(17, 116, 43);
+	color: #fff;
+	border-radius: 4px;
+	width: 104px;
+	height: 48px;
+}
+
+.btn--yes:hover {
+	background-color: rgb(24, 165, 62);
+}
+
+@keyframes loader {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.loader {
+	animation: loader 1s linear infinite;
+}
+
+/* Pembelian tiket sukses */
+.item-content--payment-success .content {
+	top: 200%;
+}
+
+.item-content--payment-success .img-container {
+	top: -200%;
+}
+
+main.success {
+	background-color: #b6dffb;
+}
+
+main.success .item-content--payment-success {
+	z-index: 40;
+}
+
+main.success .item-content--payment-success .content,
+main.success .item-content--payment-success .img-container {
+	top: 0;
+}
+
+main.success .item-content--form .content {
+	top: 200%;
+}
+
+main.success .item-content--form .img-container {
+	top: -200%;
+}
+
+.item-content--payment-success .content {
+	display: grid;
+	place-items: center;
+	background-color: #1178bd;
+	color: #fff;
+	position: relative;
+}
+
+.item-content--payment-success .title-form {
+	text-align: center;
+	font-size: 28px;
+	line-height: 48px;
+	color: #fff;
+}
+
+.detail-data-payment {
+	text-decoration: underline;
+	text-align: center;
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 20px;
+}
+
+/* Popup check detail data */
+.popup-check-detail-data {
+	position: absolute;
+	z-index: 40;
+	background-color: rgba(0, 0, 0, 0.5);
+	inset: 0;
+	display: none;
+	place-items: center;
+}
+
+.check-detail-data {
+	background-color: #fff;
+	border-radius: 6px;
+	padding: 20px;
+	position: relative;
+	width: 500px;
+}
+
+.title-check-detail-data {
+	color: #566f83;
+	margin-bottom: 10px;
+}
+
+.close-detail-data {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	cursor: pointer;
+}
+
+.icon-success-payment {
+	background: white;
+	border-radius: 50%;
+	margin: 0 auto 20px;
+	display: block;
+}
+
+.popup {
+	padding: 20px;
+}
+
+@media (max-width: 1120px) {
+	.container {
+		width: 520px;
+	}
+
+	.item-content .content {
+		width: 100%;
+		left: 0;
+	}
+
+	.img-container {
+		display: none;
+	}
+
+	main.active .item-content--form .content {
+		top: -100%;
+	}
+
+	main.success .item-content--form .content {
+		top: -200%;
+	}
+
+	main.success .item-content--output-payment .content {
+		top: -100%;
+	}
+}
+
+@media (max-width: 576px) {
+	main {
+		padding: 10px 20px;
+	}
+
+	.container {
+		width: 100%;
+	}
+
+	.container-description-output {
+		font-size: 14px;
+	}
+
+	.subpopup {
+		width: 100%;
+	}
+}
+
+@media (max-width: 484px) {
+	body {
+		height: auto;
+	}
+
+	main {
+		height: 100vh;
+		position: relative;
+		overflow: auto;
+	}
+
+	.container {
+		height: 620px;
+	}
+
+	.confirmation-detail {
+		height: 400px;
+		overflow: auto;
+	}
+
+	.description-output,
+	.value-output {
+		width: auto;
+	}
+
+	.container-description-output {
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.detail-data-payment {
+		font-size: 14px;
+	}
+
+	.item-content--payment-success .title-form {
+		font-size: 24px;
+	}
+
+	.check-detail-data {
+		height: 100%;
+		overflow: auto;
+	}
+
+	.close-detail-data {
+		top: 10px;
+		right: 10px;
+	}
+
+	.container-description-output:not(.container-description-output:last-child) {
+		margin-bottom: 10px;
+	}
+}

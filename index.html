@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ticket Payment</title>
+		<!-- Icon -->
+		<link rel="shortcut icon" href="plane-landing.png" type="image/x-icon" />
+		<!-- Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+		<!-- CSS -->
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main>
+			<section class="container">
+				<!-- Bagian form input  -->
+				<div class="item-content item-content--form">
+					<div class="content">
+						<h2 class="title-form">Isi formulir untuk pembelian tiket</h2>
+						<form>
+							<div class="wrap-input">
+								<label for="name">Nama:</label>
+								<input type="text" id="name" autofocus autocomplete="off" class="input-form" required />
+							</div>
+
+							<div class="wrap-input">
+								<label for="city">Kota Dituju:</label>
+								<input type="text" id="city" list="list-city" autocomplete="off" class="input-form" required />
+
+								<!-- Daftar kota tujuan -->
+								<datalist id="list-city">
+									<option value="Malang">Malang</option>
+									<option value="Magelang" data-discount="5">Magelang</option>
+									<option value="Medan">Medan</option>
+									<option value="Yogyakarta">Yogyakarta</option>
+									<option value="Lampung">Lampung</option>
+									<option value="Pekanbaru">Pekanbaru</option>
+									<option value="Palembang" data-discount="10">Palembang</option>
+									<option value="Makassar">Makassar</option>
+									<option value="Papua" data-discount="5">Papua</option>
+									<option value="Ambon" data-discount="15">Ambon</option>
+									<option value="Balikpapan">Balikpapan</option>
+									<option value="Pontianak">Pontianak</option>
+									<option value="Bandung" data-discount="10">Bandung</option>
+									<option value="Jakarta" data-discount="10">Jakarta</option>
+									<option value="Surabaya">Surabaya</option>
+								</datalist>
+							</div>
+
+							<div class="wrap-input">
+								<label for="status">Status:</label>
+								<select name="statu" id="status" class="input-form" required>
+									<option value="Dewasa">Dewasa</option>
+									<option value="Anak-anak">Anak-anak</option>
+								</select>
+							</div>
+
+							<div class="wrap-input">
+								<label for="total-people">Jumlah Orang:</label>
+								<input type="number" id="total-people" class="input-form" required />
+							</div>
+
+							<div class="wrap-input">
+								<label for="payment-method">Metode Pembayaran:</label>
+								<!-- Daftar pembayaran -->
+								<select name="payment" id="payment-method" class="input-form" required>
+									<option value="BRI">BRI</option>
+									<option value="BCA">BCA</option>
+									<option value="BNI">BNI</option>
+									<option value="Mandiri">Mandiri</option>
+									<option value="DANA">DANA</option>
+									<option value="OVO">OVO</option>
+									<option value="Gopay">Gopay</option>
+								</select>
+							</div>
+
+							<div class="wrap-input">
+								<label for="discount">Diskon:</label>
+								<input type="text" id="discount" class="input-form input-form--disabled" disabled value="0%" required />
+							</div>
+
+							<div class="wrap-btn">
+								<button type="reset" class="btn btn--reset">Hapus</button>
+								<button type="submit" class="btn btn--send">Pesan</button>
+							</div>
+						</form>
+					</div>
+
+					<img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=896&q=80" alt="vacation" class="img-container" />
+				</div>
+
+				<!-- Bagian output -->
+				<div class="item-content item-content--output-payment">
+					<div class="content">
+						<h2 class="title-form">Konfirmasi detail pembelian tiket</h2>
+						<div class="confirmation-detail">
+							<div class="container-description-output">
+								<p class="description-output">Nama:</p>
+								<p class="value-output">Joko</p>
+							</div>
+							<div class="container-description-output">
+								<p class="description-output">Kota Dituju:</p>
+								<p class="value-output city">Jakarta</p>
+							</div>
+							<div class="container-description-output">
+								<p class="description-output">Status:</p>
+								<p class="value-output">Dewasa</p>
+							</div>
+							<div class="container-description-output">
+								<p class="description-output">Jumlah Orang:</p>
+								<p class="value-output">4</p>
+							</div>
+							<div class="container-description-output">
+								<p class="description-output">Harga 1 tiket:</p>
+								<p class="value-output">Rp.150.000</p>
+							</div>
+							<div class="container-description-output">
+								<p class="description-output">Subtotal Pembayaran:</p>
+								<p class="value-output">Rp.600.000</p>
+							</div>
+							<div class="container-description-output">
+								<p class="description-output">Diskon:</p>
+								<p class="value-output">10%</p>
+							</div>
+							<div class="container-description-output">
+								<p class="description-output">Total Pembayaran:</p>
+								<p class="value-output">Rp.540.000</p>
+							</div>
+							<div class="container-description-output">
+								<p class="description-output">Metode Pembayaran:</p>
+								<p class="value-output">BRI</p>
+							</div>
+						</div>
+						<div class="wrap-btn wrap-btn--confirmation-detail">
+							<button type="button" class="btn btn--edit">Ubah</button>
+							<button type="button" class="btn btn--pay" id="btn-pay">Bayar</button>
+						</div>
+					</div>
+
+					<img src="https://images.unsplash.com/photo-1593182440959-9d5165b29b59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80" alt="vacation" class="img-container" />
+				</div>
+
+				<!-- Pembelian tiket berhasil -->
+				<div class="item-content item-content--payment-success">
+					<div class="content">
+						<div>
+							<h2 class="title-form">Pembayaran tiket berhasil, selamat menikmati liburan.</h2>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" class="icon-success-payment">
+								<path fill="none" d="M0 0h24v24H0z" />
+								<path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="rgba(46,207,115,1)" />
+							</svg>
+							<p class="detail-data-payment">Lihat detail data pembelian tiket</p>
+						</div>
+					</div>
+
+					<img src="https://images.unsplash.com/photo-1507539989371-99615e449486?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=962&q=80" alt="happy-vacation" class="img-container" />
+				</div>
+			</section>
+
+			<div class="popup-confirmation popup">
+				<div class="subpopup-confirmation subpopup">
+					<p class="description-popup-confirmation">Apakah data pembelian tiket sudah benar?</p>
+					<div class="wrap-btn">
+						<button class="btn btn--no" type="button">Belum</button>
+						<button class="btn btn--yes" type="button">Sudah</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="popup-check-detail-data popup">
+				<div class="check-detail-data subpopup">
+					<!-- Isi konten detail data ini dinamis dari javascript -->
+				</div>
+			</div>
+
+			<script src="script.js"></script>
+		</main>
+	</body>
+</html>
